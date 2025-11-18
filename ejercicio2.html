@@ -97,7 +97,7 @@
             if(id) document.getElementById('pnl-' + id).style.display = 'block';
         }
 
-        // 1. Suma
+        
         function calcSuma() {
             let n = parseInt(document.getElementById("numN").value);
             if (n <= 0 || isNaN(n)) { alert("Ingrese un número positivo mayor a 0"); return; }
@@ -108,7 +108,7 @@
             div.innerText = "La suma de los primeros " + n + " números es: " + suma;
         }
 
-        // 2. Promedio
+        
         function calcProm() {
             let notas = [
                 Number(document.getElementById("n1").value), Number(document.getElementById("n2").value),
@@ -129,7 +129,7 @@
             let estado = "";
             let color = "";
 
-            // Regla: < 11 Desaprobado
+            
             if (prom < 11) { 
                 estado = "DESAPROBADO";
                 color = "text-danger";
@@ -146,18 +146,18 @@
             `;
         }
 
-        // 3. Ordenar + Mayor y Menor
+       
         function calcOrden() {
             let str = document.getElementById("txtNums").value;
             let arr = str.split(',').map(Number);
             if(arr.length !== 5 || arr.includes(NaN)) { alert("Ingrese exactamente 5 números válidos separados por coma."); return; }
             
-            // 1. Ordenar (Menor a Mayor)
+           
             arr.sort((a, b) => a - b);
 
-            // 2. Obtener extremos (Ya que está ordenado, es muy fácil)
-            let menor = arr[0]; // El primero
-            let mayor = arr[arr.length - 1]; // El último
+        
+            let menor = arr[0]; 
+            let mayor = arr[arr.length - 1]; 
 
             // 3. Mostrar Resultados
             document.getElementById("lblOrdenados").innerText = arr.join(" - ");
